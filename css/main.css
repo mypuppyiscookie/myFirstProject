@@ -1,0 +1,171 @@
+body {
+    background-color: rgba(251, 251, 251, 1);
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;         
+    margin: 0;
+    /* overflow: hidden; 스크롤바 제거 */
+}
+
+.mainContent {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: calc(100% - 340px); 
+    height: 100vh;
+    background-color: white;
+    transition: width 0.1s linear, left 0.1s linear;
+    padding: 20px;
+}
+
+.sideBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(146,19,19,1);
+    width: 320px;
+    height: 100000000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(251, 251, 251, 1);
+    overflow: hidden; /* 스크롤바 제거 */
+}
+
+/* .resizer {
+    width: 10px;
+    cursor: ew-resize;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #aaa;
+}
+
+.resizer:hover {
+    background: #999;
+}*/
+
+.icon {
+    width: 100%;
+    display: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    text-align: start;
+} 
+
+.title {
+    width: 100%;
+    color: rgba(251, 251, 251, 1);
+    font-size: 20;
+    font-weight: bold;
+    text-align: start;
+}
+
+.title2 {
+    color: rgba(146,19,19,1);
+    position: sticky;
+    left: 10px;
+    top:10px;
+    font-size: 20;
+    font-weight: bold;
+}
+
+.databaseListBtn {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(146,19,19,1);
+    border: none;
+    color: rgba(251, 251, 251, 1);
+    font-size: 16px;
+    text-align: start;
+
+}
+
+.databaseListBtn:hover {
+    background-color: rgba(251, 251, 251, 1);
+    color: black;
+}
+
+.line1 {
+    display: flex;
+}
+
+.sqlQuery {
+    resize: none;
+    width: 900px;
+    height: 100px;
+}
+
+.userBtn {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background-color: rgba(146,19,19,1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 14px;
+    color: rgba(251, 251, 251, 1);
+    text-align: center;
+    line-height: 40px; /*버튼 높이와 같도록*/
+}
+
+.userNameShort {
+    color: rgba(251, 251, 251, 1);
+    font-size: 14px;
+}
+
+.userTable {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    right: 10px;
+    top: 60px;
+    width: 100px;
+    height: 60px;
+    border: none;
+    background-color: rgba(251, 251, 251, 1);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.userTable button {
+    border: none;
+    background-color: rgba(251, 251, 251, 1);
+    color: black;
+    width: 100px;
+    height: 30px;
+    text-align: start;
+    border-radius: 5px;
+}
+
+.userTable button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+/* .setUpPage {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: rgba(251, 251, 251, 1);
+    box-shadow: 2px 2px 10px rgba(15, 15, 15, 0.2);
+    border-radius: 5px;
+    border: none;
+}
+
+.setUpBar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 100px;
+    background-color: rgba(146,19,19,1);
+    color: rgba(251, 251, 251, 1);
+} */
+
+.active {
+    display: none;
+}
