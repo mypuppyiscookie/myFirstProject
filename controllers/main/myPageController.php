@@ -1,9 +1,9 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+// error_reporting(E_ALL);
+// ini_set('display_errors', '1');
 
-require_once '../../models/main/setUpModel.php';
+require_once '../../models/main/myPageModel.php';
 require_once "../../config.php";
 
 header("Content-Type: application/json; charset=UTF-8");
@@ -56,9 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($action === "deleteAccount") {
         $userId = $_SESSION['userId'];
-        $password = $_POST['password'] ?? '';
+        $currentPassword = $_POST['deletePassword'] ?? '';
 
-        if (!verifyPassword($userId, $password)) {
+        if (!verifyPassword($userId, $currentPassword)) {
             $response["message"] = "비밀번호가 올바르지 않습니다.";
         } else {
             if (deleteUser($userId)) {

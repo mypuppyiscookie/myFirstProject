@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                const nameFirstTwo = data.userName.substring(0, 2); // ✅ 앞 2글자 가져오기
+                const nameFirstTwo = data.userName.substring(0, 2);
                 userBtn.innerHTML = `<span class="userNameShort">${nameFirstTwo}</span>`;
             }
         })
-        .catch(error => console.error("❌ 유저 정보 불러오기 오류:", error));
+        .catch(error => console.error("유저 정보 불러오기 오류:", error));
 
     if (logoutBtn) {
         logoutBtn.addEventListener("click", function () {
@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.success) {
                     alert("로그아웃 되었습니다!");
-                    window.location.href = "../views/login.php"; // ✅ 로그인 페이지로 이동
+                    window.location.href = "../views/login.php"; 
                 }
             })
-            .catch(error => console.error("❌ 로그아웃 요청 오류:", error));
+            .catch(error => console.error("로그아웃 요청 오류:", error));
         });
     }
 });

@@ -5,27 +5,38 @@ body {
     align-items: center;      
     height: 100vh;         
     margin: 0;
-    /* overflow: hidden; 스크롤바 제거 */
+    overflow: hidden; 
+}
+
+.container {
+    display: flex; 
+    width: 100vw;  
+    height: 100vh; 
 }
 
 .mainContent {
-    position: absolute;
+    box-sizing: border-box;
+    flex-grow: 1;  
+    min-width: 0px;
     right: 0;
     top: 0;
-    width: calc(100% - 340px); 
+    /* width: calc(100% - 300px);  */
     height: 100vh;
     background-color: white;
     transition: width 0.1s linear, left 0.1s linear;
-    padding: 20px;
+    padding: 20px 100px 20px 100px;
+    margin-left: 300px;
 }
 
 .sideBar {
+    box-sizing: border-box;
+    padding: 10px;
     position: fixed;
     left: 0;
     top: 0;
     background-color: rgba(146,19,19,1);
-    width: 320px;
-    height: 100000000px;
+    width: 300px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,13 +73,11 @@ body {
     font-size: 20;
     font-weight: bold;
     text-align: start;
+    margin: 10px 0;
 }
 
 .title2 {
     color: rgba(146,19,19,1);
-    position: sticky;
-    left: 10px;
-    top:10px;
     font-size: 20;
     font-weight: bold;
 }
@@ -91,12 +100,26 @@ body {
 
 .line1 {
     display: flex;
+    position: relative;
+    width: 100%;
 }
 
 .sqlQuery {
     resize: none;
-    width: 900px;
-    height: 100px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.sqlQueryBtn {
+    position: absolute;
+    right: 0;
+    width: 80px;
+    background-color: rgba(146,19,19,1);
+    border: none;
+    border-radius: 5px;
+    color: rgba(251, 251, 251, 1);
 }
 
 .userBtn {
@@ -146,26 +169,183 @@ body {
     background-color: rgb(240, 240, 240);
 }
 
-/* .setUpPage {
-    position: relative;
-    width: 600px;
-    height: 400px;
-    background-color: rgba(251, 251, 251, 1);
-    box-shadow: 2px 2px 10px rgba(15, 15, 15, 0.2);
-    border-radius: 5px;
-    border: none;
+.logo {
+    font-size: 40px; 
+    color:rgba(146,19,19,1);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
 .setUpBar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 400px;
-    width: 100px;
+    font-size: 0; /* 버튼에 자동 생성되는 공백 제거 */
+}
+
+.setUpBtn {
+    width: 110px;
+    height: 40px;
+    background-color: rgba(251, 251, 251, 1);
+    border: 2px solid;
+    border-color: rgba(251, 251, 251, 1) rgba(251, 251, 251, 1) rgba(146,19,19,1) rgba(251, 251, 251, 1);
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(146,19,19,1);
+    margin-bottom: 20px;
+}
+
+.findCont {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px;
+}
+
+.findBtn {
+    width: 300px;
+    height: 50px;
+    border: 2px solid rgba(146,19,19,1);
     background-color: rgba(146,19,19,1);
+    border-radius: 5px;
     color: rgba(251, 251, 251, 1);
-} */
+    font-size: 16px;
+}
+
+.inputBig {
+    width: 293px;
+    height: 30px;
+    border: 2px solid rgba(146,19,19,1);
+    border-radius: 5px;
+    font-size: 16px; 
+}
 
 .active {
     display: none;
 }
+
+/* 테이블을 감싸는 div 스타일 */
+.table-wrapper {
+    width: 100%;
+    height: 480px;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+/* 테이블 기본 스타일 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 900px;
+    text-align: left;
+    border-collapse: collapse; /* ✅ 여백 제거 */
+}
+
+/* 테이블 헤더 스타일 (고정) */
+th {
+    border: 1px solid #494949;
+    padding: 5px;
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    border: 1px solid #494949;
+    white-space: nowrap; /* 한 줄 유지 (줄바꿈 방지) */
+    overflow: hidden;
+    padding: 0px;
+}
+
+.table-input {
+    height: 25px;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.crawlingZone {
+    position: fixed;
+    bottom: 100px;
+}
+
+.getZone {
+    position: fixed;
+    bottom: 20px;
+}
+
+.inputCrawling {
+    width: 220px;
+    height: 30px;
+    background-color: rgba(251, 251, 251, 1);
+    border-radius: 2.5px;
+    border: none;
+    padding: 0;
+}
+
+.crawlingBtn {
+    width: 50px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 2.5px;
+}
+
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 내부 */
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.close ,
+.close2 {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* 이미지 스타일 */
+.modalImages img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+.tableButtons {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* .saveDataBtn {
+    border-color: chartreuse;
+    background-color: chartreuse;
+    color: black;
+}
+
+.cancelDataBtn {
+    border-color: crimson;
+    background-color: crimson;
+    color: black;
+} */

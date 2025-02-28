@@ -14,16 +14,18 @@
             <button id="findPwdToggle" class="findPwdToggle" onclick="findToggle('pwd')">비밀번호 찾기</button>
         </div>
 
-        <form id="findIdForm" class="active">
+        <div id="findIdForm" class="findForm active">
             <input type="text" id="name" class="inputBig" placeholder="이름">
             <input type="email" id="email" class="inputBig" placeholder="이메일">
             <button class="findBtn" onclick="findId()">아이디 찾기</button>
-        </form>
+            <a href="login.php" class="goto">로그인 하러가기</a>
+        </div>
 
-        <form id="findPwdForm" class="active">
+        <div id="findPwdForm" class="findForm active">
             <input type="text" id="id" class="inputBig" placeholder="아이디">
             <button class="findBtn" onclick="findPwd()">비밀번호 찾기</button>
-        </form>
+            <a href="login.php" class="goto">로그인 하러가기</a>
+        </div>
     </div>
 
     <script>
@@ -36,19 +38,19 @@
             document.getElementById("findPwdForm").classList.remove("active");
             document.getElementById("findIdToggle").classList.remove("active");
             document.getElementById("findPwdToggle").classList.remove("active");
-            document.getElementById("findIdToggle").style.borderColor ="rgba(146,19,19,1) rgba(146,19,19,1) rgba(251, 251, 251, 1) rgba(146,19,19,1)";
+            document.getElementById("findIdToggle").style.borderColor = "rgba(146,19,19,1) rgba(146,19,19,1) rgba(251, 251, 251, 1) rgba(146,19,19,1)";
 
             if (type === 'id') {
                 document.getElementById("findPwdForm").classList.add("active");
-                document.getElementById("findIdToggle").style.borderColor ="rgba(146,19,19,1) rgba(146,19,19,1) rgba(251, 251, 251, 1) rgba(146,19,19,1)";
+                document.getElementById("findIdToggle").style.borderColor = "rgba(146,19,19,1) rgba(146,19,19,1) rgba(251, 251, 251, 1) rgba(146,19,19,1)";
                 document.getElementById("findPwdToggle").style.borderColor = "";
             } else {
                 document.getElementById("findIdForm").classList.add("active");
-                document.getElementById("findPwdToggle").style.borderColor ="rgba(146,19,19,1) rgba(146,19,19,1) rgba(251, 251, 251, 1) rgba(146,19,19,1)";
+                document.getElementById("findPwdToggle").style.borderColor = "rgba(146,19,19,1) rgba(146,19,19,1) rgba(251, 251, 251, 1) rgba(146,19,19,1)";
                 document.getElementById("findIdToggle").style.borderColor = "";
             }
         }
-        
+
         function findId() {
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
@@ -75,9 +77,9 @@
                     body: `action=findPwd&id=${encodeURIComponent(id)}`
                 })
                 .then(response => response.json())
-                .then(data => alert(data.message));
+                .then(data => alert(data.message))
+                .catch(error => alert("비밀번호 찾기 요청 실패:"+ error));
         }
-
     </script>
 </body>
 

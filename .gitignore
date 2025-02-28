@@ -1,11 +1,14 @@
 # DB 관련 파일 제외
 /models/db.php
+/test.php
+/services/mailService.php
 
 # 개인 개발 환경 설정 파일 제외 (VS Code)
 .vscode/
 
 # 민감한 서비스 파일 제외 (services 폴더 전체)
-services/
+services/composer.json
+services/composer.lock
 
 # 기타 제외할 가능성이 있는 파일/폴더
 *.sql    # 데이터베이스 백업 파일 제외

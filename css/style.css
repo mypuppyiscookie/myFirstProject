@@ -161,6 +161,13 @@ form {
     border-color: rgba(146,19,19,1) rgba(146,19,19,1) rgba(251, 251, 251, 1) rgba(146,19,19,1);
 } */
 
+.findForm {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 10px; /* 요소 사이 간격 */
+}
+
 .findBtn {
     width: 300px;
     height: 52px;

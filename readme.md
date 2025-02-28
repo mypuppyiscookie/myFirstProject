@@ -1,1 +1,1 @@
-echo "# myFirstProject" >> readme.md
+echo "#myFirstProject" >> README.md
